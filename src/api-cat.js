@@ -13,7 +13,7 @@ export const fetchCatByBreed = breedId => {
     .then(res => res.data)
     .then(res => {
       if (!res.ok) {
-        throw new Error(response.status);
+        throw new Error(res.status);
       }
     });
 };

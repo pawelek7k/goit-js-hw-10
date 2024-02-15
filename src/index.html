@@ -14,7 +14,7 @@
       display: block;
     }
 
-    /* .loader {
+    .loader {
       width: 48px;
       height: 48px;
       border-radius: 50%;
@@ -31,14 +31,13 @@
       100% {
         box-shadow: 48px 0 #000000 inset;
       }
-    } */
+    }
   </style>
 </head>
 
 <body>
-  <span class="loader"></span>
   <select class="breed-select"></select>
-  <p class=" loader">Loading data, please wait...</p>
+  <p class=" loader-wrapper"><span class="loader"></span></p>
   <p class="error">Oops! Something went wrong! Try reloading the page!</p>
   <div class="cat-info"></div>
   <script src="index.js" type="module"></script>
