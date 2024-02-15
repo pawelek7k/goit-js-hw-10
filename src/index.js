@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import { fetchBreeds, fetchCatByBreed } from './api-cat';
 
 const breedSelectHtml = document.querySelector('.breed-select');
@@ -15,7 +16,7 @@ try {
       loader.classList.add('hidden');
     })
     .catch(error => {
-      console.error('Error fetching breeds:', error);
+      Notiflix.Notify.failure('Error fetching breeds:', error);
       errorHtml.classList.remove('hidden');
       loader.classList.add('hidden');
     });
