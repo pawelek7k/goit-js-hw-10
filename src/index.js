@@ -9,7 +9,8 @@ errorHtml.classList.add('hidden');
 try {
   fetchBreeds().then(data => renderBreeds(data));
 } catch (error) {
-  console.log(error);
+  errorHtml.classList.remove('hidden');
+  errorHtml.classList.add('show');
 }
 
 function renderBreeds(breeds) {
