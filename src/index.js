@@ -10,18 +10,12 @@ errorHtml.classList.add('hidden');
 loader.classList.remove('hidden');
 
 try {
-  fetchBreeds()
-    .then(data => {
-      renderBreeds(data);
-      loader.classList.add('hidden');
-    })
-    .catch(error => {
-      Notiflix.Notify.failure('Error fetching breeds:', error);
-      errorHtml.classList.remove('hidden');
-      loader.classList.add('hidden');
-    });
+  fetchBreeds().then(data => {
+    renderBreeds(data);
+    loader.classList.add('hidden');
+  });
 } catch (error) {
-  console.error('Error fetching breeds:', error);
+  Notiflix.Notify.failure('Error fetching breeds:', error);
   errorHtml.classList.remove('hidden');
   loader.classList.add('hidden');
 }
@@ -36,13 +30,14 @@ function renderBreeds(breeds) {
 breedSelectHtml.addEventListener('change', event => {
   const breedId = event.target.value;
   loader.classList.remove('hidden');
+  catInfo.innerHTML = '';
   fetchCatByBreed(breedId)
     .then(catData => {
       renderCat(catData);
       loader.classList.add('hidden');
     })
     .catch(error => {
-      console.error('Error fetching cat:', error);
+      Notiflix.Notify.failure('Error fetching cat:', error);
       errorHtml.classList.remove('hidden');
       loader.classList.add('hidden');
     });
