@@ -15,8 +15,9 @@ try {
     loader.classList.add('hidden');
   });
 } catch (error) {
-  Notiflix.Notify.failure('Error fetching breeds:', error);
-  errorHtml.classList.remove('hidden');
+  Notiflix.Notify.failure(
+    'Oops! Something went wrong! Try reloading the page!'
+  );
   loader.classList.add('hidden');
 }
 
@@ -37,8 +38,9 @@ breedSelectHtml.addEventListener('change', event => {
       loader.classList.add('hidden');
     })
     .catch(error => {
-      Notiflix.Notify.failure('Error fetching cat:', error);
-      errorHtml.classList.remove('hidden');
+      Notiflix.Notify.failure(
+        'Oops! Something went wrong! Try reloading the page!'
+      );
       loader.classList.add('hidden');
     });
 });
