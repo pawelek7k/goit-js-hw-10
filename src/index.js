@@ -48,7 +48,7 @@ function renderCat(catData) {
   const { description, temperament, name } = catData[0].breeds[0];
   catInfo.innerHTML = `
     <h2>${name}</h2>
-    <img src="${url}" alt="${name}" width="600"/>
+    <img src="${url}" alt="${name}" height="400"/>
     <p>${description}</p>
     <p><strong>Temperament:</strong> ${temperament}</p>
   `;
